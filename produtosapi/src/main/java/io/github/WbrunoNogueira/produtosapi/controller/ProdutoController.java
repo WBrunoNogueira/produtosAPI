@@ -2,10 +2,7 @@ package io.github.WbrunoNogueira.produtosapi.controller;
 
 import io.github.WbrunoNogueira.produtosapi.model.Produto;
 import io.github.WbrunoNogueira.produtosapi.repository.ProdutoRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -27,5 +24,11 @@ public class ProdutoController {
 
         produtoRepository.save(produto); // salva o prodito que recebe do postman
         return produto;
+    }
+
+    //metodo endpoint responsavel por obter os dados pelo ID
+    @GetMapping("{id}")
+    public Produto obterPorID(@PathVariable("id") String id){
+        return produtoRepository.findById(id).orElse(null); // retorna o metodo por id e se não tiver retorna nulo
     }
 }
