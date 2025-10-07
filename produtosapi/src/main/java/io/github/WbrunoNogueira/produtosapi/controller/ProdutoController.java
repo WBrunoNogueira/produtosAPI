@@ -4,6 +4,7 @@ import io.github.WbrunoNogueira.produtosapi.model.Produto;
 import io.github.WbrunoNogueira.produtosapi.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -43,5 +44,12 @@ public class ProdutoController {
                            @RequestBody Produto produto){
         produto.setId(id); // seta o produto
         produtoRepository.save(produto);
+    }
+
+    //PESQUISA - recebe os parâmetros para pesquisa, pel url
+    @GetMapping
+    public List<Produto> Buscar(@RequestParam ("nome") String nome){
+        return produtoRepository.findBynome(nome);
+
     }
 }
