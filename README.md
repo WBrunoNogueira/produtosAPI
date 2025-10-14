@@ -2,12 +2,13 @@
 
 # 🧩 produtosAPI - Java 21 / Spring Boot
 
-Este projeto é uma API RESTful desenvolvida em **Java 21** com **Spring Boot**, implementando um **CRUD (Create, Read, Update, Delete)** de produtos.  
+Este projeto é uma API RESTful desenvolvida em **Java 21** com **Spring Boot**, implementando um **CRUD (Create, Read, Update, Delete)** de produtos.
+
 A persistência dos dados é feita em um banco **H2 em memória**, ideal para testes e desenvolvimento local.
 
----
 
-## 🚀 Tecnologias Utilizadas
+
+# 🚀 Tecnologias Utilizadas
 
 - **Java 21**
 - **Spring Boot**
@@ -16,7 +17,6 @@ A persistência dos dados é feita em um banco **H2 em memória**, ideal para te
 - **H2 Database**
 - **Maven**
 
----
 
 ## ⚙️ Funcionalidades
 
@@ -26,7 +26,7 @@ A persistência dos dados é feita em um banco **H2 em memória**, ideal para te
 - **Atualizar produto** → `PUT /produtos/{id}`
 - **Excluir produto** → `DELETE /produtos/{id}`
 
----
+
 
 ## 🗄️ Configuração do Banco de Dados (H2)
 
@@ -50,7 +50,7 @@ spring:
 
 ```
 
----
+
 
 ## 🔍 Detalhes da configuração
 
@@ -66,7 +66,7 @@ spring:
 
 - **spring.h2.console.path:** → `define o caminho de acesso ao console (/h2-console)`
 
----
+
 
 ## 💻 Acesso ao Console do H2
 
@@ -83,7 +83,7 @@ Use as credenciais abaixo para se conectar:
 | Senha      | password              |
 
 
----
+
 
 ## ▶️ Como Executar o Projeto
 
@@ -107,9 +107,6 @@ Execute o projeto com o Maven
 A aplicação estará disponível em:
 
 👉 ```http://localhost:8080```
-
-
----
 
 
 ## 🧠 Observações
