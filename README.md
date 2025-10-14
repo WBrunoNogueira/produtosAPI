@@ -48,53 +48,71 @@ spring:
       enabled: true
       path: /h2-console
 
+```
+
+---
+
 ## 🔍 Detalhes da configuração
 
-spring.application.name: nome da aplicação (Produtos API)
+- **spring.application.name:** → `nome da aplicação (Produtos API)`
 
-spring.datasource.url: URL de conexão do banco de dados H2 em memória (jdbc:h2:mem:produtos)
+- **spring.datasource.url:** → `URL de conexão do banco de dados H2 em memória (jdbc:h2:mem:produtos)`
 
-spring.datasource.username / password: credenciais para acesso ao banco (sa / password)
+- **spring.datasource.username / password:** → `credenciais para acesso ao banco (sa / password)`
 
-spring.jpa.database-platform: define o dialeto SQL usado pelo Hibernate (H2Dialect)
+- **spring.jpa.database-platform:** → `define o dialeto SQL usado pelo Hibernate (H2Dialect)`
 
-spring.h2.console.enabled: ativa o console web do H2
+- **spring.h2.console.enabled:** → `ativa o console web do H2`
 
-spring.h2.console.path: define o caminho de acesso ao console (/h2-console)
+- **spring.h2.console.path:** → `define o caminho de acesso ao console (/h2-console)`
 
-💻 Acesso ao Console do H2
+---
+
+## 💻 Acesso ao Console do H2
 
 Após iniciar o projeto, você pode acessar o console web do H2 através do seguinte endereço:
 
-👉 http://localhost:8080/h2-console
+👉 ` http://localhost:8080/h2-console`
 
 Use as credenciais abaixo para se conectar:
 
-Campo	Valor
-JDBC URL	jdbc:h2:mem:produtos
-Usuário	sa
-Senha	password
-▶️ Como Executar o Projeto
+| Campo      | Valor                  |
+|------------|-----------------------|
+| JDBC URL   | jdbc:h2:mem:produtos  |
+| Usuário    | sa                    |
+| Senha      | password              |
+
+
+---
+
+## ▶️ Como Executar o Projeto
 
 Clone o repositório
 
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+```git clone https://github.com/seu-usuario/nome-do-repositorio.git```
 
 
 Acesse o diretório do projeto
 
-cd nome-do-repositorio
+
+```cd nome-do-repositorio```
 
 
 Execute o projeto com o Maven
 
-mvn spring-boot:run
+```mvn spring-boot:run```
 
 
 A aplicação estará disponível em:
-👉 http://localhost:8080
 
-🧠 Observações
+👉 ```http://localhost:8080```
+
+
+---
+
+
+## 🧠 Observações
 
 O banco H2 é temporário e os dados são perdidos ao encerrar a aplicação.
 
