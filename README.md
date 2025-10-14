@@ -1,6 +1,6 @@
-# produtosAPI
 
-# 🧩 CRUD de Produtos - Java 21 / Spring Boot
+
+# 🧩 produtosAPI - Java 21 / Spring Boot
 
 Este projeto é uma API RESTful desenvolvida em **Java 21** com **Spring Boot**, implementando um **CRUD (Create, Read, Update, Delete)** de produtos.  
 A persistência dos dados é feita em um banco **H2 em memória**, ideal para testes e desenvolvimento local.
