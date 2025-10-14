@@ -1,43 +1,39 @@
 # produtosAPI
 
-🧩 Projeto CRUD com Spring Boot e H2 Database
+# 🧩 CRUD de Produtos - Java 21 / Spring Boot
 
-Este projeto é uma aplicação CRUD (Create, Read, Update, Delete) desenvolvida em Java 21 utilizando o Spring Boot, com persistência de dados em um banco de dados em memória H2.
-O objetivo é demonstrar o funcionamento de uma API RESTful completa, aplicando boas práticas de desenvolvimento com o Spring Framework, Spring Data JPA e arquitetura limpa.
+Este projeto é uma API RESTful desenvolvida em **Java 21** com **Spring Boot**, implementando um **CRUD (Create, Read, Update, Delete)** de produtos.  
+A persistência dos dados é feita em um banco **H2 em memória**, ideal para testes e desenvolvimento local.
 
-🚀 Tecnologias Utilizadas
+---
 
-Java 21
+## 🚀 Tecnologias Utilizadas
 
-Spring Boot 3+ (Spring Web, Spring Data JPA)
+- **Java 21**
+- **Spring Boot**
+- **Spring Web**
+- **Spring Data JPA**
+- **H2 Database**
+- **Maven**
 
-H2 Database (banco de dados em memória)
+---
 
-Maven (gerenciador de dependências)
+## ⚙️ Funcionalidades
 
-Lombok (para reduzir código boilerplate)
+- **Criar produto** → `POST /produtos`
+- **Listar todos os produtos** → `GET /produtos`
+- **Buscar produto por ID** → `GET /produtos/{id}`
+- **Atualizar produto** → `PUT /produtos/{id}`
+- **Excluir produto** → `DELETE /produtos/{id}`
 
-Swagger / SpringDoc OpenAPI (para documentação da API — opcional)
+---
 
-🧠 Funcionalidades
+## 🗄️ Configuração do Banco de Dados (H2)
 
-A aplicação permite realizar as principais operações CRUD:
+O projeto utiliza o **H2 Database** em modo **em memória** (`in-memory`), o que significa que os dados são apagados sempre que a aplicação é reiniciada.  
+A configuração está definida no arquivo `application.yml`:
 
-Criar (Create): adicionar novos registros
-
-Ler (Read): listar todos os registros ou consultar por ID
-
-Atualizar (Update): editar registros existentes
-
-Excluir (Delete): remover registros do banco
-
-Essas operações estão disponíveis através de endpoints REST, seguindo convenções de design de APIs RESTful.
-
-🗄️ Configuração do Banco de Dados (H2)
-
-O projeto utiliza o H2 Database em modo em memória (in-memory), ideal para testes e desenvolvimento.
-A configuração está definida no arquivo application.yml:
-
+```yaml
 spring:
   application:
     name: Produtos API
@@ -52,15 +48,25 @@ spring:
       enabled: true
       path: /h2-console
 
-🔍 Detalhes da configuração
+## 🔍 Detalhes da configuração
 
-Banco em memória: jdbc:h2:mem:produtos
+spring.application.name: nome da aplicação (Produtos API)
 
-Usuário: sa
+spring.datasource.url: URL de conexão do banco de dados H2 em memória (jdbc:h2:mem:produtos)
 
-Senha: password
+spring.datasource.username / password: credenciais para acesso ao banco (sa / password)
 
-Console Web H2: habilitado em http://localhost:8080/h2-console
+spring.jpa.database-platform: define o dialeto SQL usado pelo Hibernate (H2Dialect)
+
+spring.h2.console.enabled: ativa o console web do H2
+
+spring.h2.console.path: define o caminho de acesso ao console (/h2-console)
+
+💻 Acesso ao Console do H2
+
+Após iniciar o projeto, você pode acessar o console web do H2 através do seguinte endereço:
+
+👉 http://localhost:8080/h2-console
 
 Use as credenciais abaixo para se conectar:
 
@@ -68,40 +74,30 @@ Campo	Valor
 JDBC URL	jdbc:h2:mem:produtos
 Usuário	sa
 Senha	password
-⚙️ Como Executar o Projeto
+▶️ Como Executar o Projeto
 
-Clone o repositório:
+Clone o repositório
 
-git clone https://github.com/seu-usuario/nome-do-projeto.git
-
-
-Acesse o diretório do projeto:
-
-cd nome-do-projeto
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 
-Execute o projeto com o Maven:
+Acesse o diretório do projeto
+
+cd nome-do-repositorio
+
+
+Execute o projeto com o Maven
 
 mvn spring-boot:run
 
 
-Acesse o console do H2:
+A aplicação estará disponível em:
+👉 http://localhost:8080
 
-http://localhost:8080/h2-console
+🧠 Observações
 
-📘 Endpoints Principais
-Método	Endpoint	Descrição
-POST	/api/produtos	Cria um novo produto
-GET	/api/produtos	Lista todos os produtos
-GET	/api/produtos/{id}	Consulta um produto por ID
-PUT	/api/produtos/{id}	Atualiza um produto existente
-DELETE	/api/produtos/{id}	Exclui um produto
-🧑‍💻 Autor
+O banco H2 é temporário e os dados são perdidos ao encerrar a aplicação.
 
-Wenderson Bruno Alves Nogueira
-Desenvolvedor Java | Spring Boot | APIs REST | H2
-📧 Contato: [seuemail@exemplo.com
-]
-💼 LinkedIn: linkedin.com/in/seu-perfil
+Ideal para testes, prototipagem e aprendizado de Spring Boot.
 
-Quer que eu adicione agora uma seção de exemplos de requisições (JSON) para os endpoints, mostrando como criar e atualizar um produto? Isso deixaria o README pronto para ser publicado no GitHub.
+Pode ser facilmente substituído por bancos como PostgreSQL ou MySQL alterando as configurações no application.yml.
